@@ -40,7 +40,7 @@ namespace DSAlgorithm
             {
                 if (count == array.Length)
                 {
-                    int[] tempArray = new int[count + 1];
+                    int[] tempArray = new int[count * 2];
                     for (int i = 0; i < count; i++)
                     {
                         tempArray[i] = array[i];
@@ -58,7 +58,7 @@ namespace DSAlgorithm
             // remove element at specific location from array
             public void Print()
             {
-                for (int i = 0; i < array.Length; i++)
+                for (int i = 0; i < count; i++)
                 {
                     Console.WriteLine(array[i]);
                 }
@@ -67,19 +67,15 @@ namespace DSAlgorithm
             }
             public void RemoveAt(int index)
             {
+                if (index < 0 || index > count-1)
+                    throw new Exception("invalid index");
 
-                for (int i = index - 1; i < array.Length - 1; i++)
+                for (int i = index; i < count ; i++)
                 {
                     array[i] = array[i + 1];
                 }
+                count--;
 
-                int[] tempArray = new int[count - 1];
-                for (int i = 0; i < count - 1; i++)
-                {
-                    tempArray[i] = array[i];
-                }
-
-                array = tempArray;
             }
 
         }
