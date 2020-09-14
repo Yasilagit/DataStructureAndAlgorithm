@@ -17,7 +17,7 @@ namespace DSAlgorithm
             array.Insert(30);
             array.Insert(40);
             array.Insert(50);
-            array.RemoveAt(3);
+            array.RemoveAt(4);
             array.Print();
 
         }
@@ -38,15 +38,7 @@ namespace DSAlgorithm
 
             public void Insert(int element)
             {
-                if (count == 0)
-                {
-                    array[0] = element;
-                }
-                else if (count <= array.Length - 1)
-                {
-                    array[count] = element;
-                }
-                else
+                if (count == array.Length)
                 {
                     int[] tempArray = new int[count + 1];
                     for (int i = 0; i < count; i++)
@@ -55,8 +47,13 @@ namespace DSAlgorithm
                     }
                     tempArray[count] = element;
                     array = tempArray;
+                    count++;
                 }
-                count++;
+                else
+                {
+                    array[count++] = element;
+                }
+
             }
             // remove element at specific location from array
             public void Print()
