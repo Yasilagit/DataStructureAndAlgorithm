@@ -19,23 +19,19 @@ namespace DSAlgorithm
             array.Insert(50);
             array.RemoveAt(4);
             array.Print();
+            Console.WriteLine($"Index Of {array.IndexOf(30)}");
+            Console.ReadKey();
 
         }
-
         class Array
         {
-            // Declare and initialize an array
             int[] array;
-            int arraySize = 0;
             int count = 0;
             public Array(int size)
             {
                 array = new int[size];
 
             }
-
-            // insert element in to array
-
             public void Insert(int element)
             {
                 if (count == array.Length)
@@ -55,7 +51,6 @@ namespace DSAlgorithm
                 }
 
             }
-            // remove element at specific location from array
             public void Print()
             {
                 for (int i = 0; i < count; i++)
@@ -67,15 +62,26 @@ namespace DSAlgorithm
             }
             public void RemoveAt(int index)
             {
-                if (index < 0 || index > count-1)
+                if (index < 0 || index > count - 1)
                     throw new Exception("invalid index");
 
-                for (int i = index; i < count ; i++)
+                for (int i = index; i < count; i++)
                 {
                     array[i] = array[i + 1];
                 }
                 count--;
 
+            }
+            public int IndexOf(int element)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    if (array[i] == element)
+                    {
+                        return i;
+                    }
+                }
+                return 0;
             }
 
         }
