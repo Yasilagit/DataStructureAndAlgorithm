@@ -10,80 +10,29 @@ namespace DSAlgorithm
     {
         static void Main(string[] args)
         {
-            Array array = new Array(2);
+            //Array array = new Array(2);
+            ////array.Print();
+            //array.Insert(10);
+            //array.Insert(20);
+            //array.Insert(30);
+            //array.Insert(40);
+            //array.Insert(50);
+            //array.RemoveAt(4);
             //array.Print();
-            array.Insert(10);
-            array.Insert(20);
-            array.Insert(30);
-            array.Insert(40);
-            array.Insert(50);
-            array.RemoveAt(4);
-            array.Print();
-            Console.WriteLine($"Index Of {array.IndexOf(30)}");
+            //Console.WriteLine($"Index Of {array.IndexOf(30)}");
+
+            var linkedList = new LinkedList();
+            linkedList.AddLast(10);
+            linkedList.AddLast(20);
+            linkedList.AddLast(30);
+            linkedList.AddFirst(40);
+            var iscontain = linkedList.Contains(20);
+            var indexOf = linkedList.IndexOf(20);
+            linkedList.RemoveFirst();
+            linkedList.RemoveLast();
             Console.ReadKey();
 
         }
-        class Array
-        {
-            int[] array;
-            int count = 0;
-            public Array(int size)
-            {
-                array = new int[size];
 
-            }
-            public void Insert(int element)
-            {
-                if (count == array.Length)
-                {
-                    int[] tempArray = new int[count * 2];
-                    for (int i = 0; i < count; i++)
-                    {
-                        tempArray[i] = array[i];
-                    }
-                    tempArray[count] = element;
-                    array = tempArray;
-                    count++;
-                }
-                else
-                {
-                    array[count++] = element;
-                }
-
-            }
-            public void Print()
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    Console.WriteLine(array[i]);
-                }
-                Console.ReadKey();
-
-            }
-            public void RemoveAt(int index)
-            {
-                if (index < 0 || index > count - 1)
-                    throw new Exception("invalid index");
-
-                for (int i = index; i < count; i++)
-                {
-                    array[i] = array[i + 1];
-                }
-                count--;
-
-            }
-            public int IndexOf(int element)
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    if (array[i] == element)
-                    {
-                        return i;
-                    }
-                }
-                return 0;
-            }
-
-        }
     }
 }
