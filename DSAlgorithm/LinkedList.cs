@@ -139,7 +139,7 @@ namespace DSAlgorithm
         {
             //[10-> 20 -> 30-> 40]
             // p     c     n
-
+            if (IsEmpty()) return;
             var previous = First;
             var current = First.Next;
             while (current != null)
