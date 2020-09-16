@@ -20,7 +20,7 @@ namespace DSAlgorithm
 
         }
         Node First, Last;
-
+        int size = 0;
         public void AddFirst(int item)
         {
             var node = new Node(item);
@@ -31,6 +31,7 @@ namespace DSAlgorithm
                 node.Next = First;
                 First = node;
             }
+            size++;
 
         }
         public void AddLast(int item)
@@ -43,6 +44,7 @@ namespace DSAlgorithm
                 Last.Next = node;
                 Last = node;
             }
+            size++;
         }
         public void AddAt(int item, int index)
         {
@@ -54,6 +56,7 @@ namespace DSAlgorithm
             {
                 var newFirst = First.Next;
                 First = First.Next;
+                size--;
             }
         }
         public void RemoveLast()
@@ -63,10 +66,9 @@ namespace DSAlgorithm
                 var previousNode = GetPreviousNode(Last);
                 Last = previousNode;
                 Last.Next = null;
+                size--;
             }
         }
-
-
         private Node GetPreviousNode(Node node)
         {
             Node current = First;
@@ -115,6 +117,43 @@ namespace DSAlgorithm
         {
             return First == null;
         }
+        public int Size()
+        {
+            return size;
+        }
+        public int[] ToArray()
+        {
+            int[] array = new int[size];
+            int i = 0;
+
+            var current = First;
+            while (current != null)
+            {
+                array[i++] = current.Item;
+                current = current.Next;
+            }
+
+            return array;
+        }
+        public void Reverse()
+        {
+            //[10-> 20 -> 30-> 40]
+            // p     c     n
+
+            var previous = First;
+            var current = First.Next;
+            while (current != null)
+            {
+                var next = current.Next;
+                current.Next = previous;
+                previous = current;
+                current = next;
+            }
+            Last = First;
+            Last.Next = null;
+            First = previous;
+        }
+
 
     }
 }
