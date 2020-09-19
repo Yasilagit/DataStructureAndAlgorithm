@@ -13,6 +13,9 @@ namespace DSAlgorithm
             //UseArray();
             //UseLinkedList();
             //UseStack();
+            var expression = "[(<a+b)]>";
+            var isBalanced = BalancedExpressionTester.IsBalancedExpression(expression);
+            Console.WriteLine(isBalanced);
             Console.ReadKey();
 
         }
@@ -44,7 +47,7 @@ namespace DSAlgorithm
         }
         static void UseStack()
         {
-            Stack stack = new Stack();
+            var stack = new Stack<int>();
             stack.Push(10);
             stack.Push(20);
             stack.Push(30);
@@ -55,6 +58,7 @@ namespace DSAlgorithm
             stack.Push(40);
             Console.WriteLine(stack.peek());
         }
+
 
 
     }

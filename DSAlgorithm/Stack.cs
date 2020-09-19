@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DSAlgorithm
 {
-    public class Stack
+    public class Stack<T>
     {
-        int[] stack = new int[1];
+        T[] stack = new T[1];
         int count = 0;
-        public void Push(int item)
+        public void Push(T item)
         {
             if (count > stack.Length - 1)
             {
-                int[] tmpStack = new int[count * 2];
+                T[] tmpStack = new T[count * 2];
                 for (int i = 0; i < stack.Length; i++)
                 {
                     tmpStack[i] = stack[i];
@@ -29,13 +29,15 @@ namespace DSAlgorithm
             }
 
         }
-        public void Pop()
+        public T Pop()
         {
             count--;
+            return stack[count];
         }
         public int peek()
         {
-            return stack[count - 1];
+            return 0;
+            //return stack[count - 1];
         }
         public bool IsEmpty()
         {
