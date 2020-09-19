@@ -14,8 +14,16 @@ namespace DSAlgorithm
             //UseLinkedList();
             //UseStack();
             var expression = "[(<a+b)]>";
-            var isBalanced = BalancedExpressionTester.IsBalancedExpression(expression);
-            Console.WriteLine(isBalanced);
+            var isBalanced = BalancedExpression.IsBalancedExpression(expression);
+            if (isBalanced)
+            {
+                Console.WriteLine("Balanced");
+            }
+            else
+            {
+                Console.WriteLine("Not Balanced");
+            }
+           
             Console.ReadKey();
 
         }

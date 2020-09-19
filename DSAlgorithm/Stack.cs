@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DSAlgorithm
 {
-    public class Stack<T>
+     class Stack<T>
     {
         T[] stack = new T[1];
         int count = 0;

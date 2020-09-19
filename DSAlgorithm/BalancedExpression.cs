@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DSAlgorithm
 {
-    class BalancedExpressionTester
+    class BalancedExpression
     {
         static List<char> leftExpressionList = new List<char> { '(', '[', '{', '<' };
         static List<char> rightExpressionList = new List<char> { ')', ']', '}', '>' };
@@ -24,17 +24,15 @@ namespace DSAlgorithm
                 {
                     if (stack.IsEmpty()) return false;
                     var top = stack.Pop();
-                    if (!IsMathParanthesis(top, charArray[i]))
+                    if (!IsMatchFound(top, charArray[i]))
                     {
                         return false;
                     }
                 }
-
             }
             return stack.IsEmpty();
         }
-
-        private static bool IsMathParanthesis(char char1, char char2)
+        private static bool IsMatchFound(char char1, char char2)
         {
             if (char1 == '(' && char2 == ')')
             {
