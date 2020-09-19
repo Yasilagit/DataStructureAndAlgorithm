@@ -11,7 +11,8 @@ namespace DSAlgorithm
         static void Main(string[] args)
         {
             //UseArray();
-            UseLinkedList();
+            //UseLinkedList();
+            //UseStack();
             Console.ReadKey();
 
         }
@@ -41,6 +42,20 @@ namespace DSAlgorithm
             var getArray = linkedList.ToArray();
             linkedList.Reverse();
         }
+        static void UseStack()
+        {
+            Stack stack = new Stack();
+            stack.Push(10);
+            stack.Push(20);
+            stack.Push(30);
+            stack.Push(40);
+            Console.WriteLine(stack);
+            stack.Pop();
+            Console.WriteLine(stack);
+            stack.Push(40);
+            Console.WriteLine(stack.peek());
+        }
+
 
     }
 }
