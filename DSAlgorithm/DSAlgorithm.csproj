@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array.cs" />
+    <Compile Include="ArrayQueue.cs" />
     <Compile Include="BalancedExpression.cs" />
     <Compile Include="LinkedList.cs" />
     <Compile Include="Program.cs" />

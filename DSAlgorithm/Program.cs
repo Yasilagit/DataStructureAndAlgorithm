@@ -13,17 +13,17 @@ namespace DSAlgorithm
             //UseArray();
             //UseLinkedList();
             //UseStack();
-            var expression = "[(<a+b)]>";
-            var isBalanced = BalancedExpression.IsBalancedExpression(expression);
-            if (isBalanced)
-            {
-                Console.WriteLine("Balanced");
-            }
-            else
-            {
-                Console.WriteLine("Not Balanced");
-            }
-           
+            //var expression = "[(<a+b)]>";
+            //var isBalanced = BalancedExpression.IsBalancedExpression(expression);
+            //if (isBalanced)
+            //{
+            //    Console.WriteLine("Balanced");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Balanced");
+            //}
+            UseArrayQueue();
             Console.ReadKey();
 
         }
@@ -66,8 +66,16 @@ namespace DSAlgorithm
             stack.Push(40);
             Console.WriteLine(stack.peek());
         }
-
-
-
+        static void UseArrayQueue()
+        {
+            var arrayQueue = new ArrayQueue(5);
+            arrayQueue.Enque(10);
+            arrayQueue.Enque(20);
+            arrayQueue.Enque(30);
+            //arrayQueue.Enque(40);
+            Console.WriteLine(arrayQueue);
+            var deque = arrayQueue.Deque();
+            Console.WriteLine(arrayQueue);
+        }
     }
 }
