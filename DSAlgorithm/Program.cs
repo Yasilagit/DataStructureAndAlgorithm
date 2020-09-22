@@ -23,7 +23,16 @@ namespace DSAlgorithm
             //{
             //    Console.WriteLine("Not Balanced");
             //}
-            UseArrayQueue();
+            //UseArrayQueue();
+            var value = FindFirstRepeatedChar.GetFirstRepeatedChar("a green apple");
+            if (value !=  ' ')
+            {
+                Console.WriteLine(value);       
+            }
+            else
+            {
+                Console.WriteLine("All are repeatative char");
+            }
             Console.ReadKey();
 
         }

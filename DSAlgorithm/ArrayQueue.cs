@@ -11,8 +11,8 @@ namespace DSAlgorithm
 
         int[] array;
         int count = 0;
-        int first = 0;
-        int last = -1;
+        int front = 0;
+        int rear = 0;
 
         public ArrayQueue(int capacity)
         {
@@ -23,34 +23,25 @@ namespace DSAlgorithm
             if (IsFull())
             {
                 throw new Exception("Queue Full");
-                //var tempArray = new int[count * 2];
-                //for (int i = 0; i < count; i++)
-                //{
-                //    tempArray[i] = array[i];
-                //}
-                //tempArray[count] = item;
-                //array = tempArray;
-                //count++;
-                //last++;
             }
             else
             {
                 array[count++] = item;
-                last++;
+                rear = (rear + 1) % array.Length;
             }
 
         }
         public int Deque()
         {
             count--;
-            var tmpFirst = first;
+            var tmpFirst = front;
             array[tmpFirst] = 0;
-            first++;
+            front = (front+1) % array.Length;
             return array[tmpFirst];
         }
         public int Peek()
         {
-            return array[first];
+            return array[front];
         }
         public bool IsEmpty()
         {
